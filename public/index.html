@@ -1,35 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Whack-a-Mole</title>
-  <!-- order matters, my own stylesheet must go unederneath -->
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap-library.css">
-    
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
-  <!---external personalized stylesheet-->
-  <style type="text/css">
 
-   /*css here*/
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-library.css">
 
-   </style>  
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
+
+    <style type="text/css">
+
+    #wrapper {
+
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .div-row {
+
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border: 1px solid #734d26;
+        border-radius: 5px;
+        width: 800px;
+        background-color: #734d26;
+    }
+
+    .mole {
+
+        position: relative;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-mole {
+
+        position: relative;
+        top: 35px;
+        
+    }
+
+    .img-tuft {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    h3 {
+
+        display: hidden;
+        color: yellow;
+        font-size: 25px;
+        width: 300px;
+    }
+
+    body {
+        background-color: black;
+        font-family: Comic Sans, Comic Sans MS, cursive;
+    }
+
+    #control-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 50px;
+        width: 800px;
+    }
+
+    #start {
+        height: 48px;
+        width: 100px;
+        font-size: 15px;
+        background-color: orange;
+        font-family: Comic Sans, Comic Sans MS, cursive;
+    }
+
+    .green {
+
+        background-color: green;
+    }
+
+    #round,
+    #score,
+    #time {
+
+        background-color: lightyellow;
+        font-size: 25px;
+        color: red;
+        text-align: center;
+        width: 200px;
+    }
+
+    #playAgain {
+
+        color: red;
+        background-color: lightyellow;
+        font-size: 25px;
+        width: 70px;
+
+    }
+
+    #effects {
+
+        position: relative;
+        bottom: 500px;
+        left: 100px;
+        font-size: 80px;
+        width: 650px;
+        margin: 0 auto;
+    }
+
+  </style>  
 </head>
 <body>
     <div id="wrapper">
 
+    <h3 id="title">Whack-a-Mole<h3>
+
+    <div class="div-row" id="row1">
+
+        <div class="mole" id="mole1">
+
+            <img class="img-mole" id="m1" src="\img\mole1.jpg" value=1>
+           
+        </div>
 
 
-     <!--html here-->
+        <div class="mole" id="mole2">
 
+            <img class="img-mole" id="m2" src="\img\mole1.jpg" value=2>
+          
+        </div>
+
+        <div class="mole" id="mole3">
+
+            <img class="img-mole" id="m3" src="\img\mole1.jpg" value=3>
+
+        </div>
+
+    </div>
+
+    <div class="div-row" id="row2">
+
+        <div class="mole" id="mole1">
+
+            <img class="img-mole" id="m4" src="\img\mole1.jpg" value=4>
+
+        </div>
+
+
+        <div class="mole" id="mole2">
+
+            <img class="img-mole" id="m5" src="\img\mole1.jpg" value=5>
+
+        </div>
+
+        <div class="mole" id="mole3">
+
+            <img class="img-mole" id="m6" src="\img\mole1.jpg" value=6>
+           
+
+        </div>
+
+    </div>
+
+    <div class="div-row" id="row3">
+
+        <div class="mole" id="mole1">
+
+            <img class="img-mole" id="m7" src="\img\mole1.jpg" value=7>
+
+        </div>
+
+
+        <div class="mole" id="mole2">
+
+            <img class="img-mole" id="m8" src="\img\mole1.jpg" value=8>
+
+        </div>
+
+        <div class="mole" id="mole3">
+
+            <img class="img-mole" id="m9" src="\img\mole1.jpg" value=9>
+
+        </div>
+
+    </div> <!--end row 3-->
+
+    <br>
+    <br>
+
+    <div class="control" id="control-div">
+
+         <button class="control" id="playAgain">GO!</button>
+
+         <textarea class="control" id="round" rows="1" cols="20"></textarea>
+
+         <textarea class="control" id="score" rows="1" cols="20"></textarea>
+
+         <textarea class="control" id="time" rows="1" cols="20"></textarea>
+
+    </div>
+
+    <div>
+        <p id="effects">
+
+          Whack-A-Mole
+
+        </p>
+    </div>
 
     </div> <!-- end wrapper   --> 
 
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="/js/bootstrap.js"></script>
-<script type="text/javascript">
-      /*--js here--*/
-</script>
-<!---personalized js external file-->
-  </body>
-  </html>  
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        var interval = changeInterval() * 1000;
+
+        var moleArray = [];
+
+        var gameScore = 0;
+
+        var gameRound = 1;
+
+        var moleIntervalId = 0;
+
+        var counter = 10;
+      
+        var clock = convertIntervalToSeconds();
+
+        function convertIntervalToSeconds(){
+
+            return 10*interval/1000;
+        }
+
+        function changeInterval(){
+
+            return Math.floor((Math.random() * 3) + 1);
+        }
+
+        function gameClock(){
+
+            clockIntervalID = setInterval(function(){
+
+                if(clock == 0) {
+
+                    clearInterval(clockIntervalID);
+
+                } else {
+
+                    clock--;
+
+                    $("#time").val(clock +" seconds left");
+
+                }
+
+            },1000);
+
+        }
+
+        function startGame() {
+
+            moleIntervalId = setInterval(function(){
+
+            if (counter == 0) {
+
+                gameRound++;
+
+                $("#round").val("Round: "+gameRound);
+
+                clearInterval(moleIntervalId);
+                
+
+            } else {
+
+                counter--;
+
+                var mole = Math.floor((Math.random() * 9) + 1);
+
+                moleArray.push(mole);
+
+                moleShow(mole);
+
+            }
+
+            }, interval);
+
+        } //end startGame
+
+        function moleShow(mole){
+
+            $("#m" + mole).slideDown(interval / 2).slideUp(interval / 2);
+
+        } //end moleShow
+
+
+        $(".img-mole").click(function(){
+
+            gameScore++;
+
+            $("#score").val("Hits: "+gameScore);
+
+        });
+         
+
+        $("#playAgain").click(function(){
+
+            if (counter == 0) {
+
+                counter = 10;
+
+                $("#round").val("Round: "+gameRound);
+
+                moleArray = [];
+
+                interval =  changeInterval()*1000;
+
+                clock = convertIntervalToSeconds(interval);
+
+                gameClock(clock);
+
+                startGame(interval);
+
+                $("#time").val(clock +" seconds left");
+
+                
+            } else {
+                //do nothing
+            }
+
+        });
+
+        $("#round").val("Round: "+gameRound);
+
+        $("#score").val("Hits: "+gameScore);
+
+        $(".img-mole").slideUp();
+
+        $("#effects").animate({borderSpacing: -3600}, {step: function(now,fx) {
+
+            $(this).css("-webkit-transform","rotate("+now+"deg)"); 
+
+            $(this).css("-moz-transform","rotate("+now+"deg)");
+
+            $(this).css("transform","rotate("+now+"deg)");
+
+            $(this).slideUp(interval);
+
+            },duration:"slow"},"linear");
+
+        startGame();
+
+        gameClock();
+
+    </script>
+</body>
+</html>  
